@@ -1,0 +1,141 @@
+*, html, body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    overflow-y: hidden;
+    background: url('./img/Vecteezyabstract-backgroundRD0421-01_generated.jpg');
+    background-position: center;
+    position: relative;
+}
+
+form {
+    margin: 60px auto;
+    width: 500px;
+    height: 500px;
+    text-align: center;
+    background: rgba( 144, 19, 254, 0.15 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 10.5px );
+    -webkit-backdrop-filter: blur( 10.5px );
+    border-radius: 25px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -60%);
+}
+
+h1 {
+    padding: 20px 0;
+    text-transform: uppercase;
+    color: white;
+}
+
+p {
+   color: white; 
+}
+
+a {
+    color: yellow;
+}
+
+input {
+    border: 1px solid blueviolet;
+    border-radius: 4px;
+}
+
+select, option {
+    cursor: pointer;
+}
+
+.mail {
+    padding: 6px;
+    margin-left: -120px;
+    border: none;
+    border-radius: 0 4px 4px 0;
+    background-color: blueviolet;
+    color: white;
+}
+
+.nama {
+    padding: 6px 40px 6px 5px;
+    margin-right: 0;
+    margin-bottom: 10px;
+}
+
+#email, #password {
+    padding: 6px 260px 6px 5px;
+    margin: 10px 0;
+}
+
+#nomor, #nomorP {
+    padding: 6px 205px 6px 5px;
+    margin: 10px 0;
+    margin-left: -5px;
+    border-radius: 0 4px 4px 0;
+}
+
+#tanggal, #bulan, #tahun {
+    padding: 6px 59px 6px 3px;
+    margin-left: -5px;
+    margin-bottom: 10px;
+}
+
+#tanggal {
+    margin-left: -6px;
+}
+
+.negara {
+    padding: 5px;
+    border-radius: 4px 0 0 4px;
+    border: 1px solid blueviolet;
+    border-right: none;
+    background-color: blueviolet;
+    color: white;
+}
+
+.ttl {
+    background: blueviolet;
+    padding: 6px 10px 8px;
+    border-radius: 4px 0 0 4px;
+    color: white;
+}
+
+#email {
+    margin-bottom: 0;
+}
+
+.gendercl {
+    color: white;
+}
+
+button {
+    background-color: blueviolet;
+    padding: 10px;
+    color: white;
+    cursor: pointer;
+}
+
+button[type="button"] {
+    padding: 6px;
+    margin-left: -76px;
+    border: none;
+    border-radius: 0 4px 4px 0;
+}
+
+button[type="submit"] {
+    margin-top: 29px;
+    padding: 10px 40px;
+    border-radius: 15px;
+    border: 1px solid white;
+}
+
+input {
+    color: black;
+}

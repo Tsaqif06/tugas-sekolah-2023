@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form 1</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <form action="" method="get">
+        <fieldset>
+            <legend>Pekerjaan</legend>
+            <table>
+                <tr>
+                    <td>
+                        <label for="nama">Nama</label>
+                    </td>
+                    <td>
+                        <input type="text" name="nama" id="nama" required>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="ktp">KTP</label>
+                    </td>
+                    <td>
+                        <input type="number" name="ktp" id="ktp" required>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="kelamin">Jenis Kelamin</label>
+                    </td>
+                    <td>
+                        <select name="kelamin" id="kelamin" required>
+                            <option value="Laki-laki">Laki-laki</option>
+                            <option value="Perempuan">Perempuan</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="ttl">TTL</label></td>
+                    <td><input type="date" name="ttl" id="ttl" required></td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="agama">Agama</label>
+                    </td>
+                    <td>
+                        <select name="agama" id="agama" required>
+                            <option value="Islam">Islam</option>
+                            <option value="Kristen">Kristen</option>
+                            <option value="Katolik">Katolik</option>
+                            <option value="Hindu">Hindu</option>
+                            <option value="Buddha">Buddha</option>
+                            <option value="Konghucu">Konghucu</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="status">Status</label>
+                    </td>
+                    <td>
+                        <select name="status" id="status" required>
+                            <option value="Kawin">Kawin</option>
+                            <option value="Belum Kawin">Belum Kawin</option>
+                        </select>
+                    </td>
+                </tr>
+            </table>
+            <button type="button">Browse</button>
+            <button type="submit">Submit</button>
+        </fieldset>
+    </form>
+</body>
+</html>
