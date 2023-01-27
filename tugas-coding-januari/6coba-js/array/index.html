@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>arrayjs</title>
+</head>
+<body>
+    <h1>Tugas Array JS</h1>
+
+    <!-- soal 2 input -->
+    <input type="text" id="num" placeholder="Masukkan Angka 1-7 Untuk Melihat Hari..." size="30">
+    <button type="submit" id="submit">Submit</button>
+    <p id="p">Hari</p>
+
+    <script>
+        // soal 1 
+        // const bulan = ["Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember"];
+        // const zodiak = new Array ("Capricorn", "Aquarius", "Pisces", "Aries", "Taurus", "Gemini", "Cancer", "Leo", "Virgo", "Libra", "Scorpio", "Sagittarius");
+        // document.write(bulan[4] + "<br>");
+        // document.write(zodiak[0]);
+
+        // soal 2
+        const num = document.querySelector('#num');
+        const submit = document.querySelector('#submit');
+        const p = document.querySelector('#p');
+        const namaHari = ["Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu", "Minggu"];
+        const bilanganBulat = [1, 2, 3, 4, 5, 6, 7];
+
+        submit.addEventListener("click", () => {
+            const value = num.value - 1;
+            console.log(value);
+            console.log('Hari ' + namaHari[value]);
+            p.innerHTML = 'Hari ' + namaHari[value];
+        });
+</script>
+</body>
+</html>

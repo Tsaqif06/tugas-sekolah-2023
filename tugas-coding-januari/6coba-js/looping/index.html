@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>looping js</title>
+</head>
+<body>
+    <h1>Tugas Looping JS</h1>
+    <input type="text" name="text" id="text" placeholder="Masukkan Kalimat...">
+    <input type="text" name="loop" id="loop" placeholder="Ingin Dilooping Berapa Kali?">
+    <br><br>
+    <button type="submit" id="submit">Submit</button>
+    <button type="submit" id="delete">Delete</button>
+    <div id="looptext"></div>
+    <script>
+        const text = document.getElementById('text');
+        const loop = document.getElementById('loop');
+        const submit = document.getElementById('submit');
+        const del = document.getElementById('delete');
+        const looptext = document.getElementById('looptext');
+
+        submit.addEventListener('click', () => {
+            for (let i = 1; i <= parseInt(loop.value); i++) {
+                const paragraph = document.createElement('p');
+                paragraph.innerHTML = text.value + " Ke " + i;
+                looptext.appendChild(paragraph);
+            }
+        });
+
+        del.addEventListener('click', () => {
+                location.reload();
+        });
+   </script>
+</body>
+</html>
