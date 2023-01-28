@@ -24,7 +24,7 @@
         const imtDoc = document.querySelector('#imt');
         const klas = document.querySelector('#klas');
         
-        submit.addEventListener('click', function (e) {
+        submit.addEventListener('click', (e) => {
             const bbValue = parseFloat(bb.value);
             const tbValue = parseFloat(tb.value+"e-2");
             console.log(bbValue);
@@ -32,7 +32,7 @@
             const imt = Math.ceil(bbValue/(tbValue*tbValue));
             imtDoc.innerHTML = imt;
             
-            const klasifikasi = function (imt) {
+            const klasifikasi = (imt) => {
                 if (imt < 18.5) return "Kamu Kurus";
                 if (imt > 18.5 && imt < 25.0) return "Kamu Normal"; 
                 if (imt > 25.0) return "Kamu Gemuk"; 
