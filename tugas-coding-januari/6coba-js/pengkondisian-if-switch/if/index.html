@@ -29,13 +29,13 @@
             const tbValue = parseFloat(tb.value+"e-2");
             console.log(bbValue);
             console.log(tbValue);
-            const imt = Math.ceil(bbValue/(tbValue*tbValue));
+            const imt = bbValue/(tbValue*tbValue);
             imtDoc.innerHTML = imt;
             
             const klasifikasi = (imt) => {
-                if (imt < 18.5) return "Kamu Kurus";
-                if (imt > 18.5 && imt < 25.0) return "Kamu Normal"; 
-                if (imt > 25.0) return "Kamu Gemuk"; 
+                if (imt <= 18.5) return "Kamu Kurus";
+                if (imt >= 18.5 && imt <= 25.0) return "Kamu Normal"; 
+                if (imt >= 25.0) return "Kamu Gemuk"; 
             }
 
             klas.innerHTML = klasifikasi(imt);
