@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>oop js</title>
+</head>
+<body>
+    <h1>Tugas OOP JS | PAGE 185</h1>
+    <p>Menghitung Volume Limas</p>
+    <input type="text" name="alas" id="alas" placeholder="Masukkan Luas Alas">
+    <input type="text" name="tinggi" id="tinggi" placeholder="Masukkan Tinggi Limas">
+    <br><br>
+    <button type="submit" id="submit">Submit</button>
+    <button type="submit" id="delete">Delete</button>
+    <p id="pl"></p>
+    <p id="pk"></p>
+    <script>
+        const alasDoc = document.getElementById('alas');
+        const tinggiDoc = document.getElementById('tinggi');
+        const submit = document.getElementById('submit');
+        const del = document.getElementById('delete');
+        const pl = document.getElementById('pl');
+        const pk = document.getElementById('pk');
+
+        submit.addEventListener('click', () => {
+            const alas = alasDoc.value;
+            const tinggi = tinggiDoc.value;
+            function HitungLimas () {
+                this.alas = 0;
+                this.tinggi = 0;
+
+                this.volume = () => {
+                    return 1/3 * this.alas * this.tinggi;
+                }
+
+                this.keliling = () => {
+                    return (this.alas * this.tinggi) / 2;
+                }
+            }
+
+            const h = new HitungLimas();
+            h.alas = alas;
+            h.tinggi = tinggi;
+            pl.innerHTML = `Volume : ${h.volume()}`;
+            pk.innerHTML = `Keliling : ${h.keliling()}`;
+
+        });
+
+        del.addEventListener('click', () => {
+                location.reload();
+        });
+   </script>
+</body>
+</html>
