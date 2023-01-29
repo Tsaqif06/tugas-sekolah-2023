@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dom js</title>
+</head>
+<body>
+    <h1>Tugas DOM JS</h1>
+    <p>Soal 1</p>
+    <label for="kelamin">Jenis Kelamin</label><br>
+    <input type="radio" id="kelaminL" name="kelamin" value="Laki-Laki"/>Laki-laki
+    <input type="radio" id="kelaminP" name="kelamin" value="Perempuan"/>Perempuan
+    <br/><br>
+    <label for="warna">Warna Favorit</label><br>
+    <input type="checkbox" name="warna" class="warna" value="Merah">Merah
+    <input type="checkbox" name="warna" class="warna" value="Jingga">Jingga
+    <input type="checkbox" name="warna" class="warna" value="Kuning">Kuning
+    <input type="checkbox" name="warna" class="warna" value="Hijau">Hijau
+    <input type="checkbox" name="warna" class="warna" value="Biru">Biru
+    <input type="checkbox" name="warna" class="warna" value="Ungu">Ungu
+    <br><br>
+    <label for="golDarah">Golongan Darah</label><br>
+    <select id="objDarah">
+        <option value="A">A</option>
+        <option value="B">B</option>
+        <option value="AB">AB</option>
+        <option value="O">O</option>
+    </select>
+    <br><br>
+    <label for="alamat">Alamat</label><br>
+    <textarea name="alamat" id="alamat" cols="30" rows="3"></textarea>
+    <br><br>
+    <input type="submit" value="Get" onclick="ambilNilai();" />
+
+    <p id="klm"></p>
+    <p id="wrn"></p>
+    <p id="gd"></p>
+    <p id="almt"></p>
+    
+    <script>
+        function ambilNilai () {
+            const objKelamin = document.getElementsByName('kelamin');
+            const objWarna = document.querySelectorAll(".warna");
+            const objDarah = document.querySelector("#objDarah");
+            const objAlamat = document.querySelector("#alamat");
+            const klm = document.querySelector('#klm');
+            const wrn = document.querySelector('#wrn');
+            const gd = document.querySelector('#gd');
+            const almt = document.querySelector('#almt');
+            let checked = [];
+
+            const kelamin = objKelamin.forEach( (k) => {
+                                if(k.checked) {
+                                    klm.innerHTML = `Kelamin : ${k.value}`;
+                                }
+                            });
+
+            const warnaFav = objWarna.forEach( (w) => {
+                                if(w.checked) {
+                                    checked.push(w.value);
+                                    const check = checked.join(', ');
+                                    wrn.innerHTML = `Warna Favorit : ${check}`;
+                                }
+                            });
+
+            const golDarah = gd.innerHTML = `Golongan Darah : ${objDarah.value}`
+
+            const alamat = almt.innerHTML = `Alamat : ${objAlamat.value}`
+        }
+    </script>
+</body>
+</html>
