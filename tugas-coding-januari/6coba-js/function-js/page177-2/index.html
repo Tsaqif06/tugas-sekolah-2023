@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>function js</title>
+</head>
+<body>
+    <h1>Tugas Function JS | Soal 2 Page 177 (Switch?)</h1>
+    <select id="num" required>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+        <option value="11">11</option>
+        <option value="12">12</option>
+        <option value="13">13</option>
+        <option value="14">14</option>
+        <option value="15">15</option>
+        <option value="16">16</option>
+        <option value="17">17</option>
+        <option value="18">18</option>
+        <option value="19">19</option>
+        <option value="20">20</option>
+    </select>
+    <br><br>
+    <button type="submit" id="submit">Submit</button>
+    <p id="p"></p>
+    <script>
+        const num = document.getElementById('num');
+        const submit = document.getElementById('submit');
+        const p = document.getElementById('p');
+
+        submit.addEventListener('click', () => {
+            let nums = parseInt(num.value);
+            switch (nums) {
+                case 1:
+                    p.innerHTML = 'Satu';
+                    break;
+                case 2:
+                    p.innerHTML = 'Dua';
+                    break;
+                case 3:
+                    p.innerHTML = 'Tiga';
+                    break;
+                case 4:
+                    p.innerHTML = 'Empat';
+                    break;
+                case 5:
+                    p.innerHTML = 'Lima';
+                    break;
+                case 6:
+                    p.innerHTML = 'Enam';
+                    break;
+                case 7:
+                    p.innerHTML = 'Tujuh';
+                    break;
+                case 8:
+                    p.innerHTML = 'Delapan';
+                    break;
+                case 9:
+                    p.innerHTML = 'Sembilan';
+                    break;
+                case 10:
+                    p.innerHTML = 'Sepuluh';
+                    break;
+                case 11:
+                    p.innerHTML = 'Sebelas';
+                    break;
+                case 12:
+                    p.innerHTML = 'Duabelas';
+                    break;
+                case 13:
+                    p.innerHTML = 'Tigabelas';
+                    break;
+                case 14:
+                    p.innerHTML = 'Empatbelas';
+                    break;
+                case 15:
+                    p.innerHTML = 'Limabelas';
+                    break;
+                case 16:
+                    p.innerHTML = 'Enambelas';
+                    break;
+                case 17:
+                    p.innerHTML = 'Tujuhbelas';
+                    break;
+                case 18:
+                    p.innerHTML = 'Delapanbelas';
+                    break;
+                case 19:
+                    p.innerHTML = 'Sembilanbelas';
+                    break;
+                case 20:
+                    p.innerHTML = 'Duapuluh';
+                    break;
+                default:
+                    p.innerHTML = 'Masukkan 1-20 Sajait';
+            }
+        });
+   </script>
+</body>
+</html>
