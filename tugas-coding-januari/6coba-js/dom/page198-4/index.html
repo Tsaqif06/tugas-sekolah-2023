@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dom js</title>
+</head>
+<body>
+    <h1>Tugas DOM JS</h1>
+    <p>Soal 4</p>
+    <label for="panjang">Menghitung Jumlah Karakter Dan Kata</label><br><br>
+    <textarea rows="5" cols="45" id="text"></textarea>
+
+    <br>
+    <p>Tekan Enter Untuk Submit!</p>
+    <button type="submit" id="submit" hidden></button>
+    <p id="karakter"></p>
+    <p id="kata"></p>
+    <p id="kalimat"></p>
+    
+    <script>
+        const text = document.querySelector("#text");
+        const submit = document.querySelector("#submit");
+        const karakter = document.querySelector("#karakter");
+        const kata = document.querySelector("#kata");
+        const kalimat = document.querySelector("#kalimat");
+
+        const submitted =  text.addEventListener('keyup', (e) => {
+            if(e.key === 'Enter') {
+                submit.click();
+            }
+        });
+
+        submit.addEventListener('click', () => {
+            const value = text.value;
+            const charac = value.trim();
+            const char = charac.length;
+            const word = value.split(' ');
+            const kalim = value.split('.');
+            
+            karakter.innerHTML = 'Karakter Ada : '+ char;
+            kata.innerHTML = 'Kata Ada : ' + word.length;
+            kalimat.innerHTML = 'Kalimat Ada : ' + kalim.length;
+        });
+    </script>
+</body>
+</html>

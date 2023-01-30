@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dom js</title>
+</head>
+<body>
+    <h1>Tugas DOM JS</h1>
+    <p>Soal 2</p>
+    <label for="panjang">Menghitung Luas Persegi Panjang</label><br><br>
+    <input type="text" id="panjang" placeholder="Masukkan Panjang"/>
+    <input type="text" id="lebar" placeholder="Masukkan Lebar"/>
+    <br>
+    <p>Tekan Enter Untuk Submit!</p>
+    <p id="luas"></p>
+    
+    <script>
+        const panjang = document.querySelector("#panjang");
+        const lebar = document.querySelector("#lebar");
+        const luas = document.querySelector('#luas');
+
+        const next =  panjang.addEventListener('keyup', (e) => {
+            if(e.keyCode === 13) {
+                lebar.focus();
+            }
+        });
+        
+        const submit = lebar.addEventListener('keyup', (e) => {
+            if(e.keyCode === 13) {
+                const hasil = panjang.value*lebar.value;
+                luas.innerHTML = `Luasnya Adalah ${hasil}`
+            };
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dom js</title>
+</head>
+<body>
+    <h1>Tugas DOM JS</h1>
+    <p>Soal 3</p>
+    <h4>Pengelompokkan Berat Badan <span>(gunakan "." sebagai "," untuk bilangan desimal)</span></h4>
+        <input type="text" name="bb" id="bb" size="10" placeholder="Masukkan berat badan kamu..."><span style="margin-left: 5px;">kg</span>
+        <br><br>
+        <input type="text" name="tb" id="tb" size="10" placeholder="Masukkan tinggi badan kamu..."><span style="margin-left: 5px;">cm</span>
+        <br><br>
+        <button type="submit" id="submit">Submit</button>
+    <p id="imt">IMT Kamu : ...</p>
+    <p id="klas"></p>
+    <script>
+        const bb = document.querySelector('#bb');
+        const tb = document.querySelector('#tb');
+        const submit = document.querySelector('#submit');
+        const imtDoc = document.querySelector('#imt');
+        const klas = document.querySelector('#klas');
+
+        const next = bb.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter') {
+                tb.focus();
+            }
+        });
+
+        const subm = tb.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter') {
+                submit.click();
+            }
+        });
+        
+        submit.addEventListener('click', (e) => {
+            const bbValue = parseFloat(bb.value);
+            const tbValue = parseFloat(tb.value+"e-2");
+            console.log(bbValue);
+            console.log(tbValue);
+            const imt = bbValue/(tbValue*tbValue);
+            imtDoc.innerHTML = imt;
+            
+            const klasifikasi = (imt) => {
+                if (imt <= 18.5) return "Kamu Kurus";
+                if (imt >= 18.5 && imt <= 25.0) return "Kamu Normal"; 
+                if (imt >= 25.0) return "Kamu Gemuk"; 
+            }
+            
+            klas.innerHTML = klasifikasi(imt);
+        })
+   </script>
+</body>
+</html>
