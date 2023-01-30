@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dom js</title>
+</head>
+<body>
+    <h1>Tugas DOM JS</h1>
+    <p>Soal 2</p>
+    <label for="bulan1">Mencari Bulan Diantara Bulan Yang Diinputkan</label><br><br>
+    <input type="text" id="bulan1" placeholder="Masukkan Bulan 1" autofocus/>
+    <input type="text" id="bulan2" placeholder="Masukkan Bulan 2"/>
+    <br>
+    <p>Tekan Enter Untuk Submit!</p>
+    <p>Tekan Escape/Esc Untuk Reset!</p>
+    <p id="p"></p>
+    
+    <script>
+        const bulan1 = document.querySelector("#bulan1");
+        const bulan2 = document.querySelector("#bulan2");
+        const p = document.querySelector('#p');
+        const bulan = ["Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember"];
+        let bulanHasil = [];
+
+        const next =  bulan1.addEventListener('keyup', (e) => {
+            if(e.key === "Enter") {
+                bulan2.focus();
+            }
+        });
+        
+        const submit = bulan2.addEventListener('keyup', (e) => {
+            if(e.key === "Enter") {
+                const value1 = bulan1.value - 1;
+                const value2 = bulan2.value - 1;
+                for(i = value1; i <= value2; i++) {
+                    bulanHasil.push(bulan[i]);
+                    const bulanHasil2 = bulanHasil.join(', ');
+                    p.innerHTML = `Bulan Diantara Inputan Yakni ${bulanHasil2}`;
+                };
+            }
+
+            if(e.key === 'Escape') {
+                window.location.reload();
+            }
+        });
+    </script>
+</body>
+</html>
