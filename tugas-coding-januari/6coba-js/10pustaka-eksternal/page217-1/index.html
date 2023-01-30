@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pustaka eksternal js</title>
+</head>
+<body>
+    <h1>Tugas Pustaka Eksternal JS</h1>
+    <p>Soal 1</p>
+    <input type="text" id="input" placeholder="Masukkan Perhitungannya" autofocus/><br>
+    <button type="submit" id="submit" style="margin: 3px 0;">Hitung!</button><br>
+    <input type="text" id="output"/>
+    <br>
+    <p>Tekan Enter Untuk Submit!</p>
+    <p>Tekan Escape/Esc Untuk Reset!</p>
+    
+    <script src="./../../8ajax-jquery/node_modules/jquery/dist/jquery.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#input').keyup((e) => {
+                if(e.key === "Enter") {
+                    $('#submit').click();
+                } else if(e.key === "Escape") {
+                    location.reload();
+                }
+            })
+
+            $('#submit').click( () => {
+                var values = ($('#input').val());
+                if (values.includes('+')) {
+                    var value = values.split('+');
+                    var val = value.map((e) => {
+                        return parseInt(e, 10);
+                    })
+                    var v = val.reduce( (a,b) => {
+                        return a + b;
+                    })
+                    $('#output').val(v);
+                } else if (values.includes('-')) {
+                    var value = values.split('-');
+                    var val = value.map((e) => {
+                        return parseInt(e, 10);
+                    })
+                    var v = val.reduce( (a,b) => {
+                        return a - b;
+                    })
+                    $('#output').val(v);
+                } else if (values.includes('*')) {
+                    var value = values.split('*');
+                    var val = value.map((e) => {
+                        return parseInt(e, 10);
+                    })
+                    var v = val.reduce( (a,b) => {
+                        return a * b;
+                    })
+                    $('#output').val(v);
+                } else if (values.includes('/')) {
+                    var value = values.split('/');
+                    var val = value.map((e) => {
+                        return parseInt(e, 10);
+                    })
+                    var v = val.reduce( (a,b) => {
+                        return a / b;
+                    })
+                    $('#output').val(v);
+                } else if (values.includes('%')) {
+                    var value = values.split('%');
+                    var val = value.map((e) => {
+                        return parseInt(e, 10);
+                    })
+                    var v = val.reduce( (a,b) => {
+                        return a % b;
+                    })
+                    $('#output').val(v);
+                }
+            })
+        });
+    </script>
+</body>
+</html>

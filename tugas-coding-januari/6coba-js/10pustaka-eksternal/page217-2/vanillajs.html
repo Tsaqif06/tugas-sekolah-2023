@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>dom js</title>
+    <title>pustaka eksternal js</title>
 </head>
 <body>
-    <h1>Tugas DOM JS</h1>
+    <h1>Tugas Pustaka Eksternal JS</h1>
     <p>Soal 2</p>
     <label for="bulan1">Mencari Bulan Diantara Bulan Yang Diinputkan</label><br><br>
     <input type="text" id="bulan1" placeholder="Masukkan Bulan 1" autofocus/>
@@ -31,7 +31,7 @@
         });
         
         const submit = bulan2.addEventListener('keyup', (e) => {
-            if(e.key === "Enter") {
+            if (e.key === "Enter") {
                 const value1 = bulan1.value - 1;
                 const value2 = bulan2.value - 1;
                 for(i = value1; i <= value2; i++) {
@@ -39,9 +39,7 @@
                     const bulanHasil2 = bulanHasil.join(', ');
                     p.innerHTML = `Bulan Diantara Inputan Yakni ${bulanHasil2}`;
                 };
-            }
-
-            if(e.key === 'Escape') {
+            } else if (e.key === 'Escape') {
                 window.location.reload();
             }
         });
