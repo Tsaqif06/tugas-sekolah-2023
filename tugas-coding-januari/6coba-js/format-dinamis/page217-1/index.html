@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dom js</title>
+</head>
+<body>
+    <button onclick="tampilkanInfo()" id="tampil">Tampilkan Info</button>
+    <button onclick="sembunyikanInfo()" id="sembunyi" style="visibility: hidden;">Sembunyikan Info</button>
+    <p id="info" style="visibility: hidden;">contoh halaman web yang menampilkan perubahan penampakan</p>
+
+    <script>
+        const tampil = document.getElementById('tampil');
+        const sembunyi = document.getElementById('sembunyi');
+
+        function tampilkanInfo () {
+            var info = document.getElementById("info");
+            info.style.visibility = "visible";
+            tampil.style.display = "none";
+            sembunyi.style.visibility = "visible";
+        } 
+        function sembunyikanInfo () {
+            var info = document.getElementById("info");
+            info.style.visibility = "hidden";
+            tampil.style.display = "block";
+            sembunyi.style.visibility = "hidden";
+        } 
+    </script>
+</body>
+</html>

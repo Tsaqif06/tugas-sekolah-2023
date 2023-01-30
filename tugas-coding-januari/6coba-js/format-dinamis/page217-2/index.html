@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dom js</title>
+</head>
+<body>
+    <button type="submit" id="randomSubmit">Acak</button>
+    <h1 style="font-size: 200px; margin: 0;" id="teks"></h1>
+
+    <script>
+        const randomSubmit = document.getElementById('randomSubmit');
+        const teks = document.getElementById('teks');
+
+        randomSubmit.addEventListener('click', () => {
+            let random = () => {
+                return Math.ceil(Math.random() * 255 + 1);
+            };
+            const arrayTeks = ['Merah', 'Red', 'Green', 'Yellow', 'Kuning', 'Hijau', 'Blue', 'Biru'];
+            let randomForArrayTeks = () => {
+                return Math.floor(Math.random() * 8);
+            }
+            teks.innerHTML = arrayTeks[randomForArrayTeks()];
+            teks.style.color = `rgb(${random()}, ${random()}, ${random()})`;
+        });
+    </script>
+</body>
+</html>
