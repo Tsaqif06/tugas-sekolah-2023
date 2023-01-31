@@ -7,13 +7,27 @@
     <title>AJAX Jquery</title>
 </head>
 <body>
-    <div>Halaman 2 akan ditampilkan dibawah ini menggunakan AJAX jQuery.</div>
-    <div id="hal2">Loading...</div>
-    <button onclick="tampilkanWeb()">Muat web</button>
+    <div id="container">
+        <h1 id="title">Halaman Utama</h1>
+        <p>Ini Adalah Halaman Utama, Web Ini Dibuat Oleh Ahmad Tsaqif Al Arifin, Pada Tanggal 31 Januari 2023</p>
+        <button id="biodata">Biodata</button>
+        <button id="portofolio">Portofolio</button>
+        <button id="sitemap">Sitemap</button>
+    </div>
     <script src="./../node_modules/jquery/dist/jquery.js"></script>
     <script>
         $(document).ready(function() {
-            
+            $('#biodata').click(() => {
+                $('#container').load('./biodata.html')
+            });
+
+            $('#portofolio').click(() => {
+                $('#container').load('./portofolio.html')
+            });
+
+            $('#sitemap').click(() => {
+                $('#container').load('./sitemap.html')
+            });
         });
     </script>
 </body>

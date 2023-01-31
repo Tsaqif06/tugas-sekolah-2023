@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AJAX Jquery</title>
+</head>
+<body>
+    <div id="container">
+        <h1 id="title">Biodata</h1>
+        <table>
+            <tr>
+                <td>Nama</td>
+                <td>: Ahmad Tsaqif Al Arifin</td>
+            </tr>
+            <tr>
+                <td>TTL</td>
+                <td>: Malang, 02 Agustus 2006</td>
+            </tr>
+        </table>
+        <br><br>
+        <button id="back">Back</button>
+    </div>
+    <script src="./../node_modules/jquery/dist/jquery.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#back').click(() => {
+                $('#container').load('./index.html')
+            });
+        });
+    </script>
+</body>
+</html>

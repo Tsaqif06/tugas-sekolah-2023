@@ -50,6 +50,7 @@
                 } else if (values.includes('*')) {
                     var value = values.split('*');
                     var val = value.map((e) => {
+                        console.log(e)
                         return parseInt(e, 10);
                     })
                     var v = val.reduce( (a,b) => {
@@ -68,6 +69,7 @@
                 } else if (values.includes('%')) {
                     var value = values.split('%');
                     var val = value.map((e) => {
+                        console.log(e)
                         return parseInt(e, 10);
                     })
                     var v = val.reduce( (a,b) => {
