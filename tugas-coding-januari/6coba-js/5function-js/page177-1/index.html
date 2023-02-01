@@ -28,10 +28,13 @@
             const jmlKata = txt.split(' ');
             kata.innerHTML = `Jumlah Kata : ${jmlKata.length}`;
             const jmlKalimat = txt.split('.');
+            if (jmlKalimat.includes('')) {
+                const kalimatKosong = jmlKalimat.indexOf('');
+                let jmlKalimatAkhir = jmlKalimat.splice(kalimatKosong,1);
+            }
             kalimat.innerHTML = `Jumlah Kalimat : ${jmlKalimat.length}`;
             const jmlKarakter = txt.length;
-            karakter.innerHTML = `Jumlah Karakter : ${jmlKarakter}`;
-
+            karakter.innerHTML = `Jumlah Karakter : ${jmlKarakter}`
         });
 
         del.addEventListener('click', () => {
