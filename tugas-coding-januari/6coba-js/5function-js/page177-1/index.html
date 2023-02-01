@@ -25,6 +25,7 @@
 
         submit.addEventListener('click', () => {
             const txt = text.value;
+            const txtFinal = txt.replace(/\s/g, '');
             const jmlKata = txt.split(' ');
             kata.innerHTML = `Jumlah Kata : ${jmlKata.length}`;
             const jmlKalimat = txt.split('.');
@@ -33,7 +34,7 @@
                 let jmlKalimatAkhir = jmlKalimat.splice(kalimatKosong,1);
             }
             kalimat.innerHTML = `Jumlah Kalimat : ${jmlKalimat.length}`;
-            const jmlKarakter = txt.length;
+            const jmlKarakter = txtFinal.length;
             karakter.innerHTML = `Jumlah Karakter : ${jmlKarakter}`
         });
 
