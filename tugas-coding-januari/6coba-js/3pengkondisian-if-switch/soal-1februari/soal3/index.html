@@ -23,6 +23,18 @@
         const logout = document.querySelector('#logout');
         const wrong = document.querySelector('#wrong');
 
+        nama.addEventListener('keyup', (e) => {
+            if (e.key === 'Enter') {
+                password.focus();
+            }
+        });
+
+        password.addEventListener('keyup', (e) => {
+            if (e.key === 'Enter') {
+                submit.click();
+            }
+        });
+
         submit.addEventListener('click', () => {
             const namaValue = nama.value;
             const passwordValue = password.value;
@@ -36,6 +48,11 @@
                     login.style.display = 'block';
                     logout.style.display = 'block';
                     wrong.style.display = 'none';
+                    window.addEventListener('keyup', (e) => {
+                        if (e.key === 'Escape') {
+                            logout.click();
+                        }
+                    })
                 } else {
                     nama.style.border = "1px solid black";
                     password.style.border = "1px solid red";

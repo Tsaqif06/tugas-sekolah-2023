@@ -19,6 +19,12 @@
         const login = document.querySelector('#login');
         const wrong = document.querySelector('#wrong');
 
+        password.addEventListener('keyup', (e) => {
+            if (e.key === 'Enter') {
+                submit.click();
+            }
+        });
+
         submit.addEventListener('click', () => {
             const passwordValue = password.value;
             if (passwordValue === 'A1B2C3') {

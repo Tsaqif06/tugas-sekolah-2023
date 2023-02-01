@@ -20,14 +20,25 @@
         const jmlPembayaran = document.querySelector('#jmlPembayaran');
         // const numFormat = new Intl.NumberFormat(["ban", "id"]);
 
+        belanja.addEventListener('keyup', (e) => {
+            if(e.key === 'Enter') {
+                submit.click();
+            }
+        });
+
         submit.addEventListener('click', () => {
             if(belanja.value >= 300000) {
                 let totDiskon = 0.1 * belanja.value;
                 let totBelanja = belanja.value - totDiskon;
                 diskon.innerHTML = `Total Diskon : ${totDiskon}`;
                 jmlPembayaran.innerHTML = `Total Bayar : ${totBelanja}`;
+            } else {
+                let totDiskon = 0 * belanja.value;
+                let totBelanja = belanja.value - totDiskon;
+                diskon.innerHTML = `Total Diskon : ${totDiskon}`;
+                jmlPembayaran.innerHTML = `Total Bayar : ${totBelanja}`;
             }
-        })  
+        })
    </script>
 </body>
 </html>
