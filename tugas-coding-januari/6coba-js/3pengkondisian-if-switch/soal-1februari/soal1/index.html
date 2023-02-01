@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pengkondisian js</title>
+</head>
+<body>
+    <h1>Soal 1</h1>
+    <h1>1 Februari 2023</h1>
+    <input type="text" name="belanja" id="belanja" placeholder="Masukkan Total Belanja..." autofocus>
+    <button type="submit" id="submit">Submit</button>
+    <p id="besarDiskon"></p>
+    <p id="jmlPembayaran"></p>
+    <script>
+        const belanja = document.querySelector('#belanja');
+        const submit = document.querySelector('#submit');
+        const diskon = document.querySelector('#besarDiskon');
+        const jmlPembayaran = document.querySelector('#jmlPembayaran');
+        // const numFormat = new Intl.NumberFormat(["ban", "id"]);
+
+        submit.addEventListener('click', () => {
+            if(belanja.value >= 300000) {
+                let totDiskon = 0.1 * belanja.value;
+                let totBelanja = belanja.value - totDiskon;
+                diskon.innerHTML = `Total Diskon : ${totDiskon}`;
+                jmlPembayaran.innerHTML = `Total Bayar : ${totBelanja}`;
+            }
+        })  
+   </script>
+</body>
+</html>

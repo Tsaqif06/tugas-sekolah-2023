@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pengkondisian js</title>
+</head>
+<body>
+    <h1>Soal 3</h1>
+    <h1>1 Februari 2023</h1>
+    <input type="text" name="nama" id="nama" placeholder="Masukkan Nama..." autofocus><br><br>
+    <input type="password" name="password" id="password" placeholder="Masukkan Password..." autofocus><br><br>
+    <button type="submit" id="submit">Submit</button>
+    <h1 id="login" style="display: none;">Selamat Datang Di Web Ini!!!</h1>
+    <button type="submit" id="logout" style="display: none;">Logout</button>
+    <h1 id="wrong"></h1>
+    <script>
+        const nama = document.querySelector('#nama');
+        const password = document.querySelector('#password');
+        const submit = document.querySelector('#submit');
+        const login = document.querySelector('#login');
+        const logout = document.querySelector('#logout');
+        const wrong = document.querySelector('#wrong');
+
+        submit.addEventListener('click', () => {
+            const namaValue = nama.value;
+            const passwordValue = password.value;
+            if (namaValue === 'Tsaqif') {
+                if (passwordValue === '123') {
+                    nama.style.border = "1px solid black";
+                    password.style.border = "1px solid black";
+                    nama.style.display = 'none';
+                    password.style.display = 'none';
+                    submit.style.display = 'none';
+                    login.style.display = 'block';
+                    logout.style.display = 'block';
+                    wrong.style.display = 'none';
+                } else {
+                    nama.style.border = "1px solid black";
+                    password.style.border = "1px solid red";
+                    wrong.innerHTML = "Password Salah"
+                }
+            } else {
+                if (passwordValue === '123') {
+                    nama.style.border = "1px solid red";
+                    password.style.border = "1px solid black";
+                    wrong.innerHTML = "Akun Belum Terdaftar"
+                } else {
+                    nama.style.border = "1px solid red";
+                    password.style.border = "1px solid red";
+                    wrong.innerHTML = "Masukkan Nama Dan Password Dengan Benar!"
+                }
+            }
+        });
+
+        logout.addEventListener('click', () => {
+            location.reload();
+        })
+   </script>
+</body>
+</html>
