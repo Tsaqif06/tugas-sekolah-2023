@@ -28,12 +28,8 @@
             const txtFinal = txt.replace(/\s/g, '');
             const jmlKata = txt.split(' ');
             kata.innerHTML = `Jumlah Kata : ${jmlKata.length}`;
-            const jmlKalimat = txt.split('.');
-            if (jmlKalimat.includes('')) {
-                const kalimatKosong = jmlKalimat.indexOf('');
-                let jmlKalimatAkhir = jmlKalimat.splice(kalimatKosong,1);
-            }
-            kalimat.innerHTML = `Jumlah Kalimat : ${jmlKalimat.length}`;
+            const jmlKalimat = txt.split(/[.,!?]+/).length - 1;
+            kalimat.innerHTML = `Jumlah Kalimat : ${jmlKalimat}`;
             const jmlKarakter = txtFinal.length;
             karakter.innerHTML = `Jumlah Karakter : ${jmlKarakter}`
         });
