@@ -1,42 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>function js</title>
-</head>
-<body>
+  </head>
+  <body>
     <h1>Tugas Function JS | Soal 1 Page 177</h1>
-    <input type="text" name="text" id="text" placeholder="Masukkan Kalimat...">
-    <br><br>
+    <input
+      type="text"
+      name="text"
+      id="text"
+      placeholder="Masukkan Kalimat..."
+    />
+    <br /><br />
     <button type="submit" id="submit">Submit</button>
     <button type="submit" id="delete">Delete</button>
     <p id="kata"></p>
     <p id="kalimat"></p>
     <p id="karakter"></p>
     <script>
-        const text = document.getElementById('text');
-        const submit = document.getElementById('submit');
-        const del = document.getElementById('delete');
-        const kata = document.getElementById('kata');
-        const kalimat = document.getElementById('kalimat');
-        const karakter = document.getElementById('karakter');
+      const text = document.getElementById("text");
+      const submit = document.getElementById("submit");
+      const del = document.getElementById("delete");
+      const kata = document.getElementById("kata");
+      const kalimat = document.getElementById("kalimat");
+      const karakter = document.getElementById("karakter");
 
-        submit.addEventListener('click', () => {
-            const txt = text.value;
-            const txtFinal = txt.replace(/\s/g, '');
-            const jmlKata = txt.split(' ');
-            kata.innerHTML = `Jumlah Kata : ${jmlKata.length}`;
-            const jmlKalimat = txt.split(/[.,!?]+/).length - 1;
-            kalimat.innerHTML = `Jumlah Kalimat : ${jmlKalimat}`;
-            const jmlKarakter = txtFinal.length;
-            karakter.innerHTML = `Jumlah Karakter : ${jmlKarakter}`
-        });
+      submit.addEventListener("click", () => {
+        const txt = text.value;
+        const txtFinal = txt.replace(/\s/g, "");
+        const jmlKata = txt.split(" ");
+        kata.innerHTML = `Jumlah Kata : ${jmlKata.length}`;
+        const jmlKalimat = txt.split(/[.,!?]+/).length - 1;
+        kalimat.innerHTML = `Jumlah Kalimat : ${jmlKalimat}`;
+        const jmlKarakter = txtFinal.length;
+        karakter.innerHTML = `Jumlah Karakter : ${jmlKarakter}`;
+      });
 
-        del.addEventListener('click', () => {
-                location.reload();
-        });
-   </script>
-</body>
+      del.addEventListener("click", () => {
+        location.reload();
+      });
+    </script>
+  </body>
 </html>
