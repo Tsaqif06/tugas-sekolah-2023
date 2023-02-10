@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Object</title>
+  </head>
+  <body>
+    <h1>Tugas 10 Februari 2023</h1>
+    <label for="pilih">Pilih Bangun Datar</label><br /><br />
+    <select name="pilih" id="pilih">
+      <option selected disabled>--- Pilih ---</option>
+      <option value="segitiga">Segitiga</option>
+      <option value="segiempat">Segiempat</option>
+      <option value="lingkaran">Lingkaran</option>
+    </select>
+    <button type="submit" id="submitBang" style="visibility: hidden"></button>
+    <br /><br />
+    <div class="segitiga" style="display: none">
+      <input type="text" placeholder="Masukkan Alas..." id="a" disabled />
+      <input type="text" placeholder="Masukkan Tinggi..." id="t" disabled />
+    </div>
+
+    <div class="segiempat" style="display: none">
+      <input type="text" placeholder="Masukkan Panjang..." id="p" disabled />
+      <input type="text" placeholder="Masukkan Lebar..." id="l" disabled />
+    </div>
+
+    <div class="lingkaran" style="display: none">
+      <input
+        type="text"
+        placeholder="Masukkan Jari - jari..."
+        id="r"
+        disabled
+      />
+    </div>
+
+    <br />
+    <p id="par"></p>
+    <script src="./script.js"></script>
+  </body>
+</html>
